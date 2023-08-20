@@ -21,4 +21,17 @@
     <item
         android:id="@+id/animated_series"
         android:title="Мультсериалы" />
+
+    <item
+        android:id="@+id/recent"
+        android:title="История" />
+
+    <item
+        android:id="@+id/favourite"
+        android:title="Избранные" />
+
+    <item
+        android:id="@+id/settings"
+        android:title="Настройки" />
+
 </menu>
