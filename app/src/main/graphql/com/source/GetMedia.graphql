@@ -1,0 +1,8 @@
+query Getmedia {
+  getmedia(group: 0) {
+    name
+    img
+    link
+    year
+  }
+}

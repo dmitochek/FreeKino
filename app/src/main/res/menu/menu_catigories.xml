@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+    <item
+        android:id="@+id/new_movies"
+        android:title="Новинки"/>
+
+    <item
+        android:id="@+id/films"
+        android:title="Фильмы"/>
+
+    <item
+        android:id="@+id/serials"
+        android:title="Сериалы" />
+
+    <item
+        android:id="@+id/cartoons"
+        android:title="Мультфильмы" />
+
+    <item
+        android:id="@+id/animated_series"
+        android:title="Мультсериалы" />
+</menu>

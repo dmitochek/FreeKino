@@ -1,0 +1,13 @@
+  type Query {
+    getmedia(group: Int!): [Media]
+  }
+
+  type Media {
+      name: String!
+      img: String!
+      link: String!
+      year: Int!
+  }
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
