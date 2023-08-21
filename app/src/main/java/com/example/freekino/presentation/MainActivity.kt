@@ -13,6 +13,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.freekino.R
 import com.example.freekino.data.repository.FilmsRepositoryImpl
+import com.example.freekino.data.repository.RefreshFilmsRepositoryImpl
 import com.example.freekino.domain.models.VideoBasicInfo
 import com.example.freekino.domain.usecase.RefreshCatalogUseCase
 import com.example.freekino.domain.usecase.ShowBasicVideoInfoUseCase
@@ -22,8 +23,9 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val filmsRepository = FilmsRepositoryImpl()
+    private val refreshFilmsRepository = RefreshFilmsRepositoryImpl()
     private val showBasicVideoInfoUseCase = ShowBasicVideoInfoUseCase(filmsRepository = filmsRepository)
-    private val refreshCatalogUseCase = RefreshCatalogUseCase()
+    private val refreshCatalogUseCase = RefreshCatalogUseCase(refreshFilmsRepository = refreshFilmsRepository)
     private lateinit var gridView: GridView
     private var prevCategory: Int = 0
 
@@ -97,7 +99,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             when (item.itemId) {
                 R.id.search_button -> Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
-                R.id.refresh_button -> Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show()
+                R.id.refresh_button -> {
+                    Toast.makeText(this, "Refreshed", Toast.LENGTH_SHORT).show()
+                    showFilms(refreshCatalogUseCase.execute(prevCategory), prevCategory)
+                }
             }
             super.onOptionsItemSelected(item)
         }

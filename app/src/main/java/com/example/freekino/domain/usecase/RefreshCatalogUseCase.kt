@@ -1,7 +1,10 @@
 package com.example.freekino.domain.usecase
 
-class RefreshCatalogUseCase {
-    fun execute(): Boolean{
-        return true
+import com.example.freekino.domain.models.VideoBasicInfo
+import com.example.freekino.domain.repository.RefreshFilmsRepository
+
+class RefreshCatalogUseCase(private val refreshFilmsRepository: RefreshFilmsRepository) {
+    fun execute(category: Int): Array<VideoBasicInfo?> {
+        return refreshFilmsRepository.getFilms(category)
     }
 }

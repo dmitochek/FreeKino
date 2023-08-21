@@ -1,0 +1,8 @@
+query Refresh($category: Int!) {
+    refresh(group: $category) {
+        name
+        img
+        link
+        year
+    }
+}

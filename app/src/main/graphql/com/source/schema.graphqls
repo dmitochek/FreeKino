@@ -1,5 +1,6 @@
   type Query {
-    getmedia(group: Int!): [Media]
+      getmedia(group: Int!): [Media]
+      refresh(group: Int!): [Media]
   }
 
   type Media {
