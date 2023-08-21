@@ -1,5 +1,5 @@
-query Getmedia {
-  getmedia(group: 0) {
+query Getmedia($category: Int!) {
+  getmedia(group: $category) {
     name
     img
     link

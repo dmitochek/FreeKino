@@ -4,11 +4,11 @@
     tools:ignore="HardcodedText">
     <item
         android:id="@+id/new_movies"
-        android:title="Новинки"/>
+        android:title="Новинки" />
 
     <item
         android:id="@+id/films"
-        android:title="Фильмы"/>
+        android:title="Фильмы" />
 
     <item
         android:id="@+id/serials"
